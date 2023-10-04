@@ -1,0 +1,23 @@
+.navlink{
+    display: flex;
+}
+.menu-bar-icon{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navlink{
+        display: none;
+    }
+    .menu-bar-icon{
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 20px;
+    }
+    .navlink-Mobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
