@@ -55,7 +55,9 @@ const signUp = () => {
         email,
         password,
         cpassword
-      })
+      },
+      { withCredentials: true }
+      )
 
       if( postData.status === 200 ){
         alert('Successfully registered');
