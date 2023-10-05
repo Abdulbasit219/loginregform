@@ -49,7 +49,8 @@ const signUp = () => {
     } 
     else 
     {
-      const postData = await axios.post('http://localhost:3000/register', {
+      // const postData = await axios.post('http://localhost:3000/register', {
+        const postData = await axios.post('https://login-reg-form-roan.vercel.app/register', {
         name,
         email,
         password,

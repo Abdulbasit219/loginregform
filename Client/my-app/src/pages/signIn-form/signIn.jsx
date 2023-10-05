@@ -30,7 +30,8 @@ const signIn = () => {
         return alert('Please enter Email and Password')
       }
       else if (email && password) {
-      const res = await fetch('http://localhost:3000/login', {
+      // const res = await fetch('http://localhost:3000/login', {
+        const res = await fetch('https://login-reg-form-roan.vercel.app/login', {
         method: 'POST',
         credentials: 'include',
         headers: {
