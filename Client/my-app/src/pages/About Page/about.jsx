@@ -10,8 +10,8 @@ const about = () => {
 
     const aboutPage = async () => {
         try{
-            // const res = await fetch('http://localhost:3000/about', {
-                const res = await fetch('https://login-reg-form-roan.vercel.app/about', {
+            const res = await fetch('http://localhost:3000/about', {
+                // const res = await fetch('https://login-reg-form-roan.vercel.app/about', {
                 method: 'GET',
                 headers: {
                     Accept: "application/json",
