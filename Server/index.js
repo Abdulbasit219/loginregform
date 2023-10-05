@@ -7,12 +7,12 @@ const middleware = require('./Auth');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-app.use(cookieParser());
-app.use(express.json());
 app.use(cors({
     origin: 'https://loginregisterationform-690hh78ng-abdulbasit219.vercel.app',
     credentials: true 
 }))
+app.use(cookieParser());
+app.use(express.json());
 
 dotenv.config({ path: './config.env' })
 
