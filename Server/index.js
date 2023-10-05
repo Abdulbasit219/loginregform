@@ -7,10 +7,19 @@ const middleware = require('./Auth');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-app.use(cors({
-    origin: 'https://login-reg-form-roan.vercel.app',
-    credentials: true 
-}))
+// app.use(cors({
+//     origin: 'https://login-reg-form-roan.vercel.app',
+//     credentials: true 
+// }))
+const corsOpts = {
+    origin: '*',
+    credentials: true,
+    methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
+    allowedHeaders: ['Content-Type'],
+    exposedHeaders: ['Content-Type']
+};
+app.use(cors(corsOpts));
+
 app.use(cookieParser());
 app.use(express.json());
 
