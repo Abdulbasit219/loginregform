@@ -37,6 +37,7 @@ app.get('/about', middleware, (req, res) => {
 // registeration route
 app.post('/register', async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://loginregformfrontend.vercel.app');
+    res.setHeader('Access-Control-Allow-Methods', 'POST');  // Allow only the POST method for this route
     const { name, email, password, cpassword } = req.body
     try {
         //check if the user is already registered
