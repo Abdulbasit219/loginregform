@@ -9,7 +9,8 @@ const cookieParser = require('cookie-parser');
 
 app.use(cors(
     {
-    origin: ["https://loginregformfrontend.vercel.app"],
+    // origin: ["https://loginregformfrontend.vercel.app"],
+    origin: ["http://localhost:5173"],
     methods: ["POST", "GET"],
     credentials: true 
     }

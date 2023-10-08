@@ -50,42 +50,28 @@ const signUp = () => {
       return alert("All fields are required");
     } 
     else 
-    // {
-    //   // const postData = await axios.post('http://localhost:3000/register', {
-    //     const postData = await axios.post('https://mern-logreg-api.vercel.app/register', {
-    //     name,
-    //     email,
-    //     password,
-    //     cpassword
-    //   }
-    //   )
     {
-    const postData = await fetch('https://mern-logreg-api.vercel.app/register', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          // Add any additional headers if needed
-      },
-      body: JSON.stringify({
-          name,
-          email,
-          password,
-          cpassword
-      })
-    })
+      const postData = await axios.post('http://localhost:3000/register', {
+        // const postData = await axios.post('https://mern-logreg-api.vercel.app/register', {
+        name,
+        email,
+        password,
+        cpassword
+      }
+      )
+
       if( postData.status === 200 ){
         alert('Successfully registered');
         navigate('/SignIn')
       }
     }
   }catch (err) {
-    // if(err.response.status === 422){
-    //   alert("User Already Registered");
-    // }
-    // else if(err.response.status === 404){
-    //   alert("password and Confirm Password Does Not Match");
-    // }
+    if(err.response.status === 422){
+      alert("User Already Registered");
+    }
+    else if(err.response.status === 404){
+      alert("password and Confirm Password Does Not Match");
+    }
     console.log(err);
   }
   }
