@@ -66,12 +66,12 @@ const signUp = () => {
       }
     }
   }catch (err) {
-    if(err.response.status === 422){
-      alert("User Already Registered");
-    }
-    else if(err.response.status === 404){
-      alert("password and Confirm Password Does Not Match");
-    }
+    // if(err.response.status === 422){
+    //   alert("User Already Registered");
+    // }
+    // else if(err.response.status === 404){
+    //   alert("password and Confirm Password Does Not Match");
+    // }
     console.log(err);
   }
   }
