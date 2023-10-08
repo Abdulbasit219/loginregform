@@ -10,7 +10,8 @@ const about = () => {
 
     const aboutPage = async () => {
         try{
-            const res = await fetch('http://localhost:3000/about', {
+            // const res = await fetch('http://localhost:3000/about', {
+            const res = await fetch('https://mern-logreg-api.vercel.app/about', {
                 method: 'GET',
                 headers: {
                     Accept: "application/json",
