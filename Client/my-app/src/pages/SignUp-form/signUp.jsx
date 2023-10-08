@@ -52,7 +52,7 @@ const signUp = () => {
     else 
     {
       // const postData = await axios.post('http://localhost:3000/register', {
-        const postData = await axios.post('https://mern-logreg-api.vercel.app/signUp/register', {
+        const postData = await axios.post('https://mern-logreg-api.vercel.app/register', {
         name,
         email,
         password,
