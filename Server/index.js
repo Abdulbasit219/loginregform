@@ -7,11 +7,13 @@ const middleware = require('./Auth');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-app.use(cors({
+app.use(cors(
+    {
     origin: ["https://loginregformfrontend.vercel.app"],
-    methods: ["Get", "Post", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true 
-}))
+    }
+))
 
 app.use(cookieParser());
 app.use(express.json());
@@ -21,11 +23,9 @@ dotenv.config({ path: './config.env' })
 const port = process.env.PORT;
 require('./connection')
 
-
 app.get('/', (req, res) => {
     res.send("ApI Is working");
 })
-
 
 // about us page route
 app.get('/about', middleware, (req, res) => {

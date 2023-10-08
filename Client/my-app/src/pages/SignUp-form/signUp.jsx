@@ -16,6 +16,8 @@ const signUp = () => {
   const [ passwordVisible, setPasswordVisible ] = useState(false);
   const [ confirmPassVisible, setConfirmPassVisible ] = useState(false);
 
+  axios.defaults.withCredentials = true;
+  
   const onChange = (e) => {
     const { name, value } = e.target;
     setRegisteration((prevReg) => ({
@@ -55,8 +57,7 @@ const signUp = () => {
         email,
         password,
         cpassword
-      },
-      { withCredentials: true }
+      }
       )
 
       if( postData.status === 200 ){
