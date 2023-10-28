@@ -9,7 +9,6 @@ const cookieParser = require('cookie-parser');
 
 app.use(cors(
     {
-    // origin: ["https://loginregformfrontend.vercel.app"],
     origin: ["http://localhost:5173"],
     methods: ["POST", "GET"],
     credentials: true 
@@ -21,7 +20,7 @@ app.use(express.json());
 
 dotenv.config({ path: './config.env' })
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3030;
 require('./connection')
 
 app.get('/', (req, res) => {

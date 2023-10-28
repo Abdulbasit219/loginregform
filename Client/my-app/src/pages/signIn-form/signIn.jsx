@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './signIn.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import PassToggle from "../../components/Eye/PassToggle.jsx";
 
 const signIn = () => {
@@ -30,23 +30,23 @@ const signIn = () => {
         return alert('Please enter Email and Password')
       }
       else if (email && password) {
-      const res = await fetch('http://localhost:3000/login', {
-        // const res = await fetch('https://mern-logreg-api.vercel.app/login', {
-        method: 'POST',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      })
-      if (res.status === 200) {
-        alert('User successfully logged in');
-        navigate('/about');
+        // const res = await fetch('http://localhost:3000/login', {
+        const res = await fetch('https://server-apis-1h20.onrender.com/login', {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        })
+        if (res.status === 200) {
+          alert('User successfully logged in');
+          navigate('/about');
+        }
+        else if (res.status === 404 || res.status === 400) {
+          return alert('Invalid credentials');
+        }
       }
-      else if( res.status === 404 || res.status === 400 ) {
-        return alert('Invalid credentials');
-      }
-    }
     } catch (err) {
       console.log(err);
     }
