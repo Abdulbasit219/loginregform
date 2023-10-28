@@ -7,13 +7,7 @@ const middleware = require('./Auth');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-app.use(cors(
-    {
-    origin: ["http://localhost:5173"],
-    methods: ["POST", "GET"],
-    credentials: true 
-    }
-))
+app.use(cors())
 
 app.use(cookieParser());
 app.use(express.json());
