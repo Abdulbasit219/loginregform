@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './signIn.css';
 import { useNavigate } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 import PassToggle from "../../components/Eye/PassToggle.jsx";
 
 const signIn = () => {
@@ -31,13 +31,9 @@ const signIn = () => {
       }
       else if (email && password) {
         // const res = await fetch('http://localhost:3000/login', {
-        const res = await fetch('https://server-apis-1h20.onrender.com/login', {
-          method: 'POST',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email, password })
+        const res = await axios.post('https://server-apis-1h20.onrender.com/login', {
+          email, 
+          password 
         })
         if (res.status === 200) {
           alert('User successfully logged in');

@@ -10,17 +10,8 @@ const about = () => {
     const aboutPage = async () => {
         try {
             // const res = await fetch('http://localhost:3000/about', {
-            const res = await fetch('https://server-apis-1h20.onrender.com/about', {
-                method: 'GET',
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
-                },
-                credentials: "include"
-            });
+            const res = await axios.get('https://server-apis-1h20.onrender.com/about');
             const data = await res.json();
-            console.log(data.name);
-
             setUserData(data.name);
 
             if (!res.status === 200) {
